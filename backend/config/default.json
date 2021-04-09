@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://zacker:zacker006@cluster0.6edoo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "my-secret-token",
+  "apikey": "xFikGF246HGggQkuAaA0Ibg5uYQtGONnpgxDdbHfyHV5",
+  "serviceurl": "https://api.eu-gb.tone-analyzer.watson.cloud.ibm.com"
+}
