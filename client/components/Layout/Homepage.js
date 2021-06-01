@@ -1,31 +1,40 @@
 import styled from "styled-components";
-import { Button } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
+import Link from "next/link";
 
 const Homepage = () => {
   return (
     <>
-      <HomepageContainer>
-        <InfoContainer>
-          <h3>HowYouDoin'?</h3>
-          <MainContainer>
-            <Container>
-              <h1>Relax.</h1>
-              <h1>Communicate.</h1>
-              <h1>Get Better.</h1>
-              <MutedText>
-                You are not alone. Find activities to make you feel better. Stay
-                in touch with your therapist and let them help you.
-              </MutedText>
-              <ButtonsContainer>
-                <SignupButton variant="contained" color="primary">
-                  Signup
-                </SignupButton>
-                <LoginButton color="primary">Login</LoginButton>
-              </ButtonsContainer>
-            </Container>
-          </MainContainer>
-        </InfoContainer>
-        <ImageContainer src="./vector-image.jpg" />
+      <HomepageContainer container>
+        <Grid container item lg={6} md={12}>
+          <InfoContainer>
+            <h3>HowYouDoin'?</h3>
+            <MainContainer>
+              <Container>
+                <h1>Relax.</h1>
+                <h1>Communicate.</h1>
+                <h1>Get Better.</h1>
+                <MutedText>
+                  You are not alone. Find activities to make you feel better.
+                  Stay in touch with your therapist and let them help you.
+                </MutedText>
+                <ButtonsContainer>
+                  <Link href="/signup">
+                    <SignupButton variant="contained" color="primary">
+                      Signup
+                    </SignupButton>
+                  </Link>
+                  <Link href="/login">
+                    <LoginButton color="primary">Login</LoginButton>
+                  </Link>
+                </ButtonsContainer>
+              </Container>
+            </MainContainer>
+          </InfoContainer>
+        </Grid>
+        <Grid container item lg={6} md={12}>
+          <ImageContainer src="./vector-image.jpg" />
+        </Grid>
       </HomepageContainer>
     </>
   );
@@ -33,10 +42,8 @@ const Homepage = () => {
 
 export default Homepage;
 
-const HomepageContainer = styled.div`
+const HomepageContainer = styled(Grid)`
   height: 100vh;
-  display: flex;
-  flex-direction: row;
 `;
 
 const InfoContainer = styled.div`
@@ -50,11 +57,12 @@ const InfoContainer = styled.div`
   padding: 2rem 3rem;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  h3 {
+    letter-spacing: 1px;
+  }
 `;
 
 const ImageContainer = styled.img`
-  background: transparent;
   height: 100vh;
   margin-left: 0;
 `;

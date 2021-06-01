@@ -1,5 +1,12 @@
-import Homepage from "./../components/Layout/Homepage";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+
+const HomepageWithNoSSR = dynamic(
+  () => import("./../components/Layout/Homepage"),
+  {
+    ssr: false,
+  }
+);
 
 const Home = () => {
   return (
@@ -7,7 +14,7 @@ const Home = () => {
       <Head>
         <title>HowYouDoin'?</title>
       </Head>
-      <Homepage />
+      <HomepageWithNoSSR />
     </>
   );
 };
