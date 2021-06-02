@@ -1,22 +1,13 @@
 import Head from "next/head";
-import dynamic from "next/dynamic";
+import Homepage from "./../components/Layout/Homepage";
 
-const HomepageWithNoSSR = dynamic(
-  () => import("./../components/Layout/Homepage"),
-  {
-    ssr: false,
-  }
-);
-
-const Home = () => {
+export default function Home() {
   return (
     <>
       <Head>
         <title>HowYouDoin'?</title>
       </Head>
-      <HomepageWithNoSSR />
+      <Homepage />
     </>
   );
-};
-
-export default Home;
+}
