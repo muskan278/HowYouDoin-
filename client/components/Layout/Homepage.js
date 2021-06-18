@@ -12,7 +12,7 @@ const Homepage = () => {
             <MainContainer>
               <Container>
                 <h1>Relax.</h1>
-                <h1>Communicate.</h1>
+                <h1 style={{ color: "rgb(0, 125, 254)" }}>Communicate.</h1>
                 <h1>Get Better.</h1>
                 <MutedText>
                   You are not alone. Find activities to make you feel better.
@@ -100,6 +100,9 @@ const SignupButton = styled(Button)`
 
 const LoginButton = styled(Button)`
   &&& {
+    border: 2px solid rgb(0, 125, 254);
     color: rgb(0, 125, 254);
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `;
